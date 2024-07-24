@@ -4,7 +4,7 @@ import { Counter } from '../Counter/Counter';
 export const Pet = () => {
   return (
       <div>
-        Pet
+        <h2>Pet</h2>
         <Counter/>
       </div>
   );

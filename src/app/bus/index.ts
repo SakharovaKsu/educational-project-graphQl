@@ -1,2 +1,3 @@
-export { Pet } from './Pet/Pet'
-export { Counter } from './Counter/Counter'
+export * from './Pet/Pet'
+export * from './Counter/Counter'
+export * from './SpecialList/SpecialList'
