@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQueryAvailablePets, useQueryAllPets } from '../../../hooks';
+import { useQueryAvailablePets, useQueryAllPets } from '../../../../hooks';
 import { SpecialList } from '../SpecialList/SpecialList';
 
 type Pets = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../init/client';
-import {Pet} from './bus';
+import { Pet } from '../pages';
 
 export const App = () => {
   return (
