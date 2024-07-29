@@ -1,5 +1,5 @@
 import React from 'react';
-import {useCreateAccount, useForm} from '../../hooks';
+import { useCreateAccount } from '../../hooks';
 
 export const Registration = () => {
   const {handleChange, save, createAccount, loading, error} = useCreateAccount()

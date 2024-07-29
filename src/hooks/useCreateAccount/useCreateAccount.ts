@@ -1,6 +1,6 @@
 import { useMutation } from '@apollo/client';
 import { loader } from 'graphql.macro';
-import {useForm} from '../useForm/useForm';
+import { useForm } from '../useForm/useForm';
 
 const mutationCreateAccount = loader('./gql/useMutationCreateAccount.graphql');
 

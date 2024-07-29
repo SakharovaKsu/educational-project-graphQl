@@ -4,3 +4,4 @@ export { useQueryAllAvailablePets } from './useQueryAllAvailablePets/useQueryAll
 export { useQueryProfile } from './useQueryProfile/useQueryProfile'
 export { useCreateAccount } from './useCreateAccount/useCreateAccount'
 export { useForm } from './useForm/useForm'
+export { useCustomerAuth } from './useCustomerAuth/useCustomerAuth'
