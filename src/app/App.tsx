@@ -1,7 +1,7 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../init/client';
-import { Pet, Registration, Login, CheckinPet } from '../pages';
+import { Pet, Registration, Login, CheckinPet, CheckOutPet } from '../pages';
 
 export const App = () => {
   return (
@@ -10,6 +10,7 @@ export const App = () => {
       <Registration/>
       <Login/>
       <CheckinPet/>
+      <CheckOutPet/>
     </ApolloProvider>
   );
 };

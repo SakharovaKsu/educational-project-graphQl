@@ -4,7 +4,7 @@ import { useQueryProfile } from '../../../../hooks';
 export const Profile = () => {
   const {getProfile, loading, error, profile} = useQueryProfile()
 
-  const loadProfile = () => getProfile({variables: {id: 'C-1'}})
+  const loadProfile = () => getProfile({variables: {id: 'C-2'}})
 
   if(loading) return <div>Loading...</div>
 
