@@ -10,7 +10,7 @@ export const Registration = () => {
 
   return (
     <div>
-      <h3>Registration</h3>
+      <h2>Registration</h2>
       <input type={'text'} placeholder={'name'} name={'name'} onChange={handleChange} />
       <input type={'text'} placeholder={'username'} name={'username'} onChange={handleChange} />
       <input type={'password'} placeholder={'password'} name={'password'} onChange={handleChange} />
