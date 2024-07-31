@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useCheckin, usePetReturned } from '../../hooks';
 
 export const CheckinPet = () => {
   const {checkIn, pet, loading, errors, error} = useCheckin()
   const {petReturned} = usePetReturned()
 
+  const [value, setValue] = useState<string>('')
+
   return (
     <div>
       <h2>Checkin</h2>
-      <button onClick={() => checkIn('C-4')} disabled={loading}>Checkin</button>
+      <input value={value} onChange={(e) => setValue(e.target.value)}/>
+      <button onClick={() => checkIn(value)} disabled={loading}>Checkin</button>
       {petReturned && (
           <div>
             <h4>Pet Returned</h4>
