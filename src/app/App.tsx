@@ -8,7 +8,6 @@ export const App = () => {
     <ApolloProvider client={client}>
       {/*<Pet/>*/}
       <Registration/>
-      <div style={{display: 'block', padding: '20px 0'}}>______________________</div>
       <Login/>
       <div style={{display: 'block', padding: '20px 0'}}>______________________</div>
       <CheckinPet/>
