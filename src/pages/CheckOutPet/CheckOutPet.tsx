@@ -14,12 +14,12 @@ export const CheckOutPet = () => {
       {customer &&
           <>
             <p>pet: {customer.name}</p>
-            <p>current Pets: {customer?.currentPets.map((pet: any) => (
-              <>
-                <p>status: {pet.status}</p>
-                <p>weight: {pet.weight}</p>
-              </>
-            ))}</p>
+            <div>current Pets: {customer?.currentPets.map((pet: any) => (
+              <ul key={pet.name}>
+                <li>status: {pet.status}</li>
+                <li>weight: {pet.weight}</li>
+              </ul>
+            ))}</div>
           </>
       }
     </div>
