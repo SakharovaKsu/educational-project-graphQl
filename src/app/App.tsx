@@ -9,7 +9,6 @@ export const App = () => {
       {/*<Pet/>*/}
       <Registration/>
       <Login/>
-      <div style={{display: 'block', padding: '20px 0'}}>______________________</div>
       <CheckinPet/>
       <div style={{display: 'block', padding: '20px 0'}}>______________________</div>
       <CheckOutPet/>
