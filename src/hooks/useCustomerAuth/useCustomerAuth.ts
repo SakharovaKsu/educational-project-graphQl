@@ -19,5 +19,5 @@ export const useCustomerAuth = () => {
     _logIn({variables: form})
   }
 
-  return {handleChange, logIn, authorizedCustomer}
+  return {handleChange, logIn, authorizedCustomer, loading, error}
 }
