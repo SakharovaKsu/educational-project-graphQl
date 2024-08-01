@@ -1,29 +1,49 @@
 import React, { useState } from 'react';
 import { useCheckOut } from '../../hooks';
+import {Button, Paper, TextField, Typography} from '@mui/material';
+import { LinearDeterminate } from '../../components/LinearProgress/LinearProgress';
 
 export const CheckOutPet = () => {
   const {checkOut, customer, loading, errors, error} = useCheckOut()
   const [value, setValue] = useState<string>('')
 
-  if (loading) return <>Loading... User verification in progress...</>
-
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-      <h2>Check out pet</h2>
-      <input value={value} onChange={(e) => setValue(e.target.value)}/>
-      <button onClick={() => checkOut(value)}>check out</button>
-      {errors || error && <p>Error... {error?.message || errors}</p>}
-      {customer &&
+    <Paper elevation={6} style={{padding: '25px', marginBottom: '25px'}}>
+      {loading && <LinearDeterminate/>}
+      <div style={{display: 'flex', flexDirection: 'column', gap: '25px', alignItems: 'flex-start'}}>
+        <div>
+          <Typography variant={'h5'} gutterBottom>Check out pet</Typography>
+          <TextField variant={'standard'}
+                     style={{marginRight: '25px'}}
+                     value={value}
+                     onChange={(e) => setValue(e.target.value)}
+          />
+          <Button variant={'contained'}
+                  color={'primary'}
+                  onClick={() => checkOut(value)}>
+            check out
+          </Button>
+        </div>
+        {errors && error &&
+          <Typography variant={'overline'}
+                      style={{color:'red'}}
+                      display={'block'}
+                      gutterBottom>
+            Error... {error?.message || errors}
+          </Typography>}
+        {customer &&
           <>
-            <p>pet: {customer.name}</p>
-            <div>current Pets: {customer?.currentPets.map((pet: any) => (
-              <ul key={pet.name}>
-                <li>status: {pet.status}</li>
-                <li>weight: {pet.weight}</li>
-              </ul>
-            ))}</div>
+            <Typography variant={'subtitle1'}>Username: {customer.name}</Typography>
+            <Typography variant={'subtitle2'}>
+              Current Pets: {customer?.currentPets.map((pet: any) => (
+              <div key={pet.name}>
+                <Typography variant={'body2'}>status: {pet.status}</Typography>
+                <Typography variant={'body2'}>weight: {pet.weight}</Typography>
+              </div>))}
+            </Typography>
           </>
-      }
-    </div>
+        }
+      </div>
+    </Paper>
   );
 };

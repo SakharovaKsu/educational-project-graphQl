@@ -1,12 +1,11 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
-import {useState} from 'react';
 
-export const LinearDeterminate = () =>  {
+export  const LinearDeterminate = () =>  {
   const [progress, setProgress] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress === 100) {
@@ -23,8 +22,8 @@ export const LinearDeterminate = () =>  {
   }, []);
 
   return (
-      <Box sx={{ width: '100%' }}>
-        <LinearProgress variant="determinate" value={progress} />
-      </Box>
+    <Box sx={{ width: '100%' }}>
+      <LinearProgress variant={'determinate'} value={progress} />
+    </Box>
   );
 }

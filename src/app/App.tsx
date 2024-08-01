@@ -10,7 +10,6 @@ export const App = () => {
       <Registration/>
       <Login/>
       <CheckinPet/>
-      <div style={{display: 'block', padding: '20px 0'}}>______________________</div>
       <CheckOutPet/>
     </ApolloProvider>
   );

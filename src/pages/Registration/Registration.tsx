@@ -19,9 +19,9 @@ export const Registration = () => {
       </div>
       <Button variant={'contained'} type={'submit'} onClick={save}>Save</Button>
       {createAccount &&
-          <Typography style={{paddingTop: '25px'}} variant={'body2'}>
-            We already customer with name: {createAccount?.name}
-          </Typography>}
+        <Typography style={{paddingTop: '25px'}} variant={'body2'}>
+          We already customer with name: {createAccount?.name}
+        </Typography>}
     </Paper>
   );
 };

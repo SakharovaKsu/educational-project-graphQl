@@ -16,9 +16,9 @@ export const Login = () => {
       </div>
       <Button variant={'contained'} type={'submit'} onClick={logIn}>Login</Button>
       {authorizedCustomer &&
-          <Typography style={{paddingTop: '25px'}} variant={'body2'}>
-            name: {authorizedCustomer?.customer.username}
-          </Typography>}
+        <Typography style={{paddingTop: '25px'}} variant={'body2'}>
+          name: {authorizedCustomer?.customer.username}
+        </Typography>}
     </Paper>
   );
 };
