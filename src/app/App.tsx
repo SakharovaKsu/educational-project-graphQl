@@ -6,11 +6,11 @@ import { Pet, Registration, Login, CheckinPet, CheckOutPet } from '../pages';
 export const App = () => {
   return (
     <ApolloProvider client={client}>
-      {/*<Pet/>*/}
-      <Registration/>
-      <Login/>
-      <CheckinPet/>
-      <CheckOutPet/>
+      <Pet/>
+      {/*<Registration/>*/}
+      {/*<Login/>*/}
+      {/*<CheckinPet/>*/}
+      {/*<CheckOutPet/>*/}
     </ApolloProvider>
   );
 };

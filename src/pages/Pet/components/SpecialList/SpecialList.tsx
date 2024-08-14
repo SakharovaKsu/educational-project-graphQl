@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQueryAllAvailablePets } from '../../../../hooks';
+import { Paper, Typography, Button } from '@mui/material';
 
 export const SpecialList = () => {
   const {getAllAvailablePets, loading, error, pets} = useQueryAllAvailablePets()
@@ -9,14 +10,14 @@ export const SpecialList = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
-      <h4>SpecialList</h4>
-      <button onClick={() => getAllAvailablePets()}>Download</button>
-      {pets?.map((pet: {id: string; name: string;}) => (
-        <div key={pet.id}>
-          <div>Name: {pet.name}</div>
+    <Paper elevation={1} style={{padding: '25px', marginBottom: '25px'}}>
+      <Typography style={{paddingBottom: '20px'}} variant={'h4'}>SpecialList</Typography>
+      <Button variant={'contained'} type={'submit'} onClick={() => getAllAvailablePets()}>Download</Button>
+        <div style={{display: 'grid', gridTemplateColumns:'repeat(4, 1fr)', gap: '20px', marginTop: '20px'}}>
+          {pets?.map((pet: {id: string; name: string;}) => (
+            <Typography key={pet.id} style={{border: '1px solid #a8a6a6', borderRadius: '5px', padding: '10px'}} variant={'body1'}>Name: {pet.name}</Typography>
+          ))}
         </div>
-      ))}
-    </div>
+    </Paper>
   );
 };

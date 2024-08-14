@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQueryAvailablePets, useQueryAllPets } from '../../../../hooks';
-import { SpecialList } from '../SpecialList/SpecialList';
+import { Typography, List, ListItem, Paper } from '@mui/material';
 
 type Pets = {
   id: string;
@@ -17,18 +17,17 @@ export const Counter = () => {
   if (error && errorPets) return <div>{error.message}</div>;
 
   return (
-    <>
-      Available Pets: {availablePets}
-      <h3>List</h3>
-      <ul>
+    <Paper elevation={1} style={{padding: '25px', marginBottom: '25px'}}>
+      <Typography style={{paddingBottom: '20px'}} variant={'h4'}>List</Typography>
+      <Typography style={{paddingBottom: '10px'}} variant={'h5'}>Available Pets: {availablePets}</Typography>
+      <List style={{display: 'grid', gridTemplateColumns:'repeat(4, 1fr)', gap: '20px'}}>
         {pets.map((pet: Pets) => (
-            <li key={pet.id}>
-              <p>Name: {pet.name}</p>
-              <p>Weight: {pet.weight}</p>
-            </li>
+            <ListItem style={{display: 'flex', flexWrap: 'wrap', gap: '10px', border: '1px solid #a8a6a6', borderRadius: '5px'}} key={pet.id}>
+              <Typography variant={'body1'}>Name: {pet.name}</Typography>
+              <Typography variant={'body1'}>Weight: {pet.weight}</Typography>
+            </ListItem>
         ))}
-      </ul>
-      <SpecialList />
-    </>
+      </List>
+    </Paper>
   );
 };
