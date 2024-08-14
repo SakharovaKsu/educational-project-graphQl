@@ -1,0 +1,26 @@
+.paper {
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.text {
+  padding-bottom: 10px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.listItem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 1px solid #a8a6a6;
+  border-radius: 5px;
+}

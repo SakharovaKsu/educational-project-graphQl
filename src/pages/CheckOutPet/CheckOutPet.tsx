@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import { useCheckOut } from '../../hooks';
 import {Button, Paper, TextField, Typography} from '@mui/material';
 import { LinearDeterminate } from '../../components/LinearProgress/LinearProgress';
+import cln from './styles.module.scss';
 
 export const CheckOutPet = () => {
   const {checkOut, customer, loading, errors, error} = useCheckOut()
   const [value, setValue] = useState<string>('')
 
   return (
-    <Paper elevation={6} style={{padding: '25px', marginBottom: '25px'}}>
+    <Paper className={cln.paper} elevation={6}>
       {loading && <LinearDeterminate/>}
-      <div style={{display: 'flex', flexDirection: 'column', gap: '25px', alignItems: 'flex-start'}}>
+      <div className={cln.containerForm}>
         <div>
           <Typography variant={'h5'} gutterBottom>Check out pet</Typography>
           <TextField variant={'standard'}
-                     style={{marginRight: '25px'}}
+                     className={cln.textField}
                      value={value}
                      onChange={(e) => setValue(e.target.value)}
           />
@@ -26,7 +27,7 @@ export const CheckOutPet = () => {
         </div>
         {errors && error &&
           <Typography variant={'overline'}
-                      style={{color:'red'}}
+                      className={cln.error}
                       display={'block'}
                       gutterBottom>
             Error... {error?.message || errors}

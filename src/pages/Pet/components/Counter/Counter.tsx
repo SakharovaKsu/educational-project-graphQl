@@ -1,12 +1,8 @@
 import React from 'react';
 import { useQueryAvailablePets, useQueryAllPets } from '../../../../hooks';
 import { Typography, List, ListItem, Paper } from '@mui/material';
-
-type Pets = {
-  id: string;
-  name: string;
-  weight: number;
-}
+import { Pets } from '../../types';
+import cln from './styles.module.scss';
 
 export const Counter = () => {
   const { availablePets, loading, error } = useQueryAvailablePets();
@@ -17,12 +13,12 @@ export const Counter = () => {
   if (error && errorPets) return <div>{error.message}</div>;
 
   return (
-    <Paper elevation={1} style={{padding: '25px', marginBottom: '25px'}}>
-      <Typography style={{paddingBottom: '20px'}} variant={'h4'}>List</Typography>
-      <Typography style={{paddingBottom: '10px'}} variant={'h5'}>Available Pets: {availablePets}</Typography>
-      <List style={{display: 'grid', gridTemplateColumns:'repeat(4, 1fr)', gap: '20px'}}>
+    <Paper className={cln.paper} elevation={1}>
+      <Typography className={cln.title} variant={'h4'}>List</Typography>
+      <Typography className={cln.text} variant={'h5'}>Available Pets: {availablePets}</Typography>
+      <List className={cln.list}>
         {pets.map((pet: Pets) => (
-            <ListItem style={{display: 'flex', flexWrap: 'wrap', gap: '10px', border: '1px solid #a8a6a6', borderRadius: '5px'}} key={pet.id}>
+            <ListItem className={cln.listItem} key={pet.id}>
               <Typography variant={'body1'}>Name: {pet.name}</Typography>
               <Typography variant={'body1'}>Weight: {pet.weight}</Typography>
             </ListItem>

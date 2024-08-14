@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useCheckin, usePetReturned } from '../../hooks';
 import { Button, Grid, Paper, TextField, Typography } from '@mui/material';
 import { LinearDeterminate } from '../../components/LinearProgress/LinearProgress';
+import cln from './styles.module.scss';
 
 export const CheckinPet = () => {
   const {checkIn, pet, loading, errors, error} = useCheckin()
@@ -10,12 +11,12 @@ export const CheckinPet = () => {
   const [value, setValue] = useState<string>('')
 
   return (
-    <Paper elevation={6} style={{padding: '25px', marginBottom: '25px'}}>
+    <Paper className={cln.paper}>
       {loading && <LinearDeterminate/>}
-      <div style={{display: 'flex', flexDirection: 'column', gap: '25px', alignItems: 'flex-start'}}>
+      <div className={cln.containerForm}>
         <div>
           <Typography variant={'h5'} gutterBottom>Checkin</Typography>
-          <TextField style={{marginRight: '25px'}}
+          <TextField className={cln.textField}
                      variant={'standard'}
                      value={value}
                      onChange={(e) => setValue(e.target.value)}/>
@@ -36,7 +37,7 @@ export const CheckinPet = () => {
             </div>)}
         {errors && error &&
             <Typography variant={'overline'}
-                        style={{color:'red'}}
+                        className={cln.error}
                         display={'block'}
                         gutterBottom>
               Error... {error?.message || errors}

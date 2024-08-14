@@ -1,0 +1,19 @@
+.paper {
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.textField {
+  margin-right: 25px;
+}
+
+.error {
+  color: red;
+}
