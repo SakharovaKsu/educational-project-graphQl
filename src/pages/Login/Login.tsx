@@ -5,7 +5,7 @@ import { LinearDeterminate } from '../../components/LinearProgress/LinearProgres
 import cln from './styles.module.scss';
 
 export const Login = () => {
-  const {handleChange, logIn, authorizedCustomer, loading} = useCustomerAuth()
+  const {handleChange, logIn, authorizedCustomer, loading, error} = useCustomerAuth()
 
   return (
     <Paper className={cln.paper} elevation={6}>
@@ -20,6 +20,7 @@ export const Login = () => {
         <Typography className={cln.description} variant={'body2'}>
           name: {authorizedCustomer?.customer.username}
         </Typography>}
+      {error && <div className={cln.error}>{error.message}</div>}
     </Paper>
   );
 };

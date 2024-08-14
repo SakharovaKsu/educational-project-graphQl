@@ -10,8 +10,9 @@
   align-items: flex-start;
 }
 
-.textField {
-  margin-right: 25px;
+.container {
+  display: flex;
+  gap: 20px;
 }
 
 .error {

@@ -14,16 +14,17 @@ export const CheckOutPet = () => {
       <div className={cln.containerForm}>
         <div>
           <Typography variant={'h5'} gutterBottom>Check out pet</Typography>
-          <TextField variant={'standard'}
-                     className={cln.textField}
-                     value={value}
-                     onChange={(e) => setValue(e.target.value)}
-          />
-          <Button variant={'contained'}
-                  color={'primary'}
-                  onClick={() => checkOut(value)}>
-            check out
-          </Button>
+          <div className={cln.container}>
+            <TextField variant={'standard'}
+                       value={value}
+                       onChange={(e) => setValue(e.target.value)}
+            />
+            <Button variant={'contained'}
+                    color={'primary'}
+                    onClick={() => checkOut(value)}>
+              check out
+            </Button>
+          </div>
         </div>
         {errors && error &&
           <Typography variant={'overline'}

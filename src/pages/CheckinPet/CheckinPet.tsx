@@ -16,25 +16,27 @@ export const CheckinPet = () => {
       <div className={cln.containerForm}>
         <div>
           <Typography variant={'h5'} gutterBottom>Checkin</Typography>
-          <TextField className={cln.textField}
-                     variant={'standard'}
-                     value={value}
-                     onChange={(e) => setValue(e.target.value)}/>
-          <Button variant={'contained'}
-                  onClick={() => checkIn(value)}
-                  disabled={loading}>
-            Checkin
-          </Button>
+          <div className={cln.container}>
+            <TextField variant={'standard'}
+                       value={value}
+                       onChange={(e) => setValue(e.target.value)}/>
+            <Button variant={'contained'}
+                    onClick={() => checkIn(value)}
+                    disabled={loading}>
+              Checkin
+            </Button>
+          </div>
         </div>
         {petReturned && (
-            <div>
-              <Typography variant={'subtitle1'}>Pet Returned</Typography>
-              <Grid>
-                <Typography variant={'body2'}>id: {petReturned.id}</Typography>
-                <Typography variant={'body2'}>name: {petReturned.name}</Typography>
-                <Typography variant={'body2'}>status: {petReturned.status}</Typography>
-              </Grid>
-            </div>)}
+          <div>
+            <Typography variant={'subtitle1'}>Pet Returned</Typography>
+            <Grid>
+              <Typography variant={'body2'}>id: {petReturned.id}</Typography>
+              <Typography variant={'body2'}>name: {petReturned.name}</Typography>
+              <Typography variant={'body2'}>status: {petReturned.status}</Typography>
+            </Grid>
+          </div>
+        )}
         {errors && error &&
             <Typography variant={'overline'}
                         className={cln.error}

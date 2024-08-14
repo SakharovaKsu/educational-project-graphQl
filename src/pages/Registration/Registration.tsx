@@ -7,7 +7,7 @@ import cln from './styles.module.scss';
 export const Registration = () => {
   const {handleChange, save, createAccount, loading, error} = useCreateAccount()
 
-  if (error) { return <p>{error.message}</p>}
+  if (error) { return <div className={cln.error}>{error.message}</div>}
 
   return (
     <Paper className={cln.paper} elevation={6}>
